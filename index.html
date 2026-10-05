@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Unicode Glyph Scrambler">
+<title>Alphabet Imaginarium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amarante&family=Fjalla+One&family=Noto+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff1493;--pink2:#ff007f;--yellow:#fff700;--green:#92cc00;--purple:#470176;--purple-dark:#2f0043;--cyan:#00DBff;--gold:#ffcc00;--ink:#050505;--white:#f9f9f9;--panel:rgba(0,0,0,.84);--shadow:0 3px 12px rgba(0,0,0,.9)}
+*{box-sizing:border-box}html{overflow-x:hidden}body{margin:0;background:#000000;color:var(--white);font-family:'Noto Sans',sans-serif;line-height:1.35}a{color:var(--cyan)}
+main{width:min(940px,calc(100% - 1.2rem));margin:auto}.rainbow{height:10px;background:linear-gradient(90deg,#ff00aa,#ff8a3c,#fff700,#92cc00,#03a6f7,#8702f4,#ff00aa);background-size:240% 100%;animation:rainbow 8s linear infinite}@keyframes rainbow{to{background-position:240% center}}
+.hero{text-align:center;padding:4rem 1rem 2rem}.kicker{font-family:'Fjalla One',sans-serif;font-size:clamp(2rem,6vw,3.8rem);letter-spacing:.08em}.kicker .ornament{font-size:0.75em;color:var(--cyan)}.kicker .dot{color:var(--pink)}.kicker .text{color:var(--gold)}.hero h1{font-family:'Fjalla One',sans-serif;font-size:clamp(3.4rem,12vw,8rem);line-height:.95;margin:.4rem 0;text-shadow:var(--shadow)}.hero p{font-size:clamp(1.4rem, 4vw, 2.4rem);color:var(--green);text-shadow:var(--shadow);margin:0}
+.card{background:var(--panel);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:clamp(1rem,3vw,2rem);margin:2rem 0;box-shadow:0 10px 35px rgba(0,0,0,.45)}.card h2{font-family:'Noto Sans',sans-serif;color:var(--white);font-size:clamp(2rem,4vw,3rem);letter-spacing:.04em;text-align:center;margin:.0 auto 1.4rem}.intro{text-align:left;color:#eee;max-width:700px;margin:0 auto 1.4rem;font-size:1.15rem;line-height:1.5}
+textarea{display:block;width:100%;min-height:170px;resize:vertical;background:rgba(0,0,0,.92);color:#fff;border:3px solid var(--purple);border-radius:10px;padding:1rem;font:400 1.15rem/1.45 'Fjalla One',sans-serif;outline:none}textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,204,255,.22)}.controls{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem}.btn{cursor:pointer;border:3px solid var(--gold);border-radius:12px;background:var(--purple);color:var(--white);padding:.7rem 1.2rem;font:2.1rem 'Noto Sans',sans-serif;letter-spacing:.04em;transition:.25s}.btn:hover{background:var(--purple-dark);color:var(--white);transform:translateY(-2px)}.btn.secondary{background:transparent;color:#fff;border-color:var(--cyan)}
+.output-wrap{position:relative;margin-top:1.25rem}.output-label{font-family:'Fjalla One',sans-serif;color:var(--cyan);letter-spacing:.05em;margin-bottom:.4rem}.output{min-height:130px;background:#000;border:3px double var(--pink);border-radius:10px;padding:1.1rem;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;box-shadow:0 0 18px rgba(255,20,147,.22)}.copy{position:absolute;right:.7rem;top:2rem;padding:.35rem .7rem;border:1px solid var(--yellow);border-radius:6px;background:#161016;color:var(--yellow);cursor:pointer;font-weight:700}.copy:hover{background:var(--pink);color:#fff}
+.notice{border:5px double var(--pink);border-radius:14px;background:linear-gradient(135deg,rgba(255,20,147,.25),rgba(255,247,0,.12));padding:1.1rem 1.2rem;margin-top:1.4rem}.notice strong{display:block;color:var(--yellow);font-family:'Fjalla One',sans-serif;font-size:1.35rem;letter-spacing:.08em;margin-bottom:.35rem}.notice p{margin:0 0 .8rem 0;color:#fff;font-size:.96rem}.notice p:last-child{margin-bottom:0}.tech{text-align:center;color:#ddd;font-size:.85rem;margin:1.25rem 0 0}.tech code{color:var(--yellow)}
+footer{margin-top:3rem;padding:2.5rem 1rem;background:rgba(0,0,0,.92);border-top:4px solid rgba(255,255,255,.12);text-align:center}.footer-title{font-family:'Noto Sans',sans-serif;color:var(--white);font-size:1.2rem;letter-spacing:.05em}.footer-subtitle{font-family:'Noto Sans',sans-serif;color:var(--white);font-size:1rem;margin-top:.2rem}.copyright{margin:.8rem auto 0;max-width:760px;color:#fff;font-size:.85rem;line-height:1.6}.copyright a{color:var(--white)}
+@media(max-width:600px){.nav-inner{flex-direction:column}.nav-links{gap:.7rem;font-size:.9rem}.card{padding:.85rem}.controls .btn{flex:1}.copy{position:static;margin-bottom:.5rem}.output-wrap{display:flex;flex-direction:column}.output-label{order:0}.copy{order:1;align-self:flex-end}.output{order:2}}
+</style>
+</head>
+
+<body>
+<main><div class="rainbow"></div><div class="rainbow"></div><br><section class="hero"><div class="kicker"><span class="ornament">꧁</span><span class="dot">●</span><span class="text">𝗔𝗟𝗣𝗛𝗔𝗕𝗘𝗧</span><span class="dot">●</span><span class="ornament">꧂</span></div><h1>IMAGINARIUM</h1><p>ᴜɴɪᴄᴏᴅᴇ ɢʟʏᴘʜ sᴄʀᴀᴍʙʟᴇʀ</p></section><br><div class="rainbow"></div><div class="rainbow"></div><br><br>
+<span class="card">
+<div style="font-size: clamp(1rem, 3vw, 1.5rem); color:var(--purple); text-align: center; margin-bottom: 0.2rem; font-family: 'Fjalla One', sans-serif;">TRANSFORM TEXT INTO A<br></div>
+<h2 id="ransom-title">🄳𝕚Ⓖ𔕺𔕛𝐚𝙻 🅁𝗮𝐍🅢𝕠𝙢 🄽Ⓞ𝘁Ꭼ</h2>
+<p class="intro">
+<span style="font-size: 1.5em; display: block; margin-bottom: 0.5rem; color: var(--gold); line-height: 1.2;">𝗛𝐎Ⲱ 𐜛 𝗪𝐎ℝƙꍛ</span>
+As you type, the engine replaces each letter with a random character from an index matching Latin letters to visually similar Unicode characters of various languages. A localized spacing rule ensures glyphs from the same Unicode block don't sit next to each other creating the scrambled   text style of a ransom note.</p></span>
+<textarea id="input" aria-label="Text to scramble" placeholder="TYPE A LETTER, SYLLABLE, WORD, OR PHRASE...." spellcheck="false"></textarea>
+<div class="controls">
+<button class="btn" id="scramble"> ⛕ </button>
+<button class="btn secondary" id="clear"> ✘ </button></div>
+
+<div class="output-wrap"><div class="output-label">𑣿𖦝⎚</div><button class="copy" id="copy">⎙</button><div id="output" class="output" aria-live="polite"></div></div>
+
+<div class="notice"><strong>⚠ IMPORTANT: PLEASE READ BEFORE COPYING !</strong>
+<p>For proper rendering of characters, environment MUST support  UTF-8 text encoding and utilize comprehensive font families (such as Noto Sans or system UI fonts) capable of displaying extended Unicode blocks. <br>This tool generates decorative text that is not a substitute for readable text. Visually similar glyphs are different Unicode characters so software and screen readers may treat them differently, will pronounce them unpredictably, and can fail to display them entirely. Ensure names, instructions, and accessibility-critical text is in ordinary readable characters.</p>
+</div><br>
+<div class="rainbow"></div><br>
+<div class="rainbow"></div><br>
+<footer><div class="footer-title"></div><div class="footer-subtitle">Copyright © 2026 Catrina Stoner. Some rights reserved. Licensed under the MIT license.<br>Unicode characters are part of the <i>Unicode Standard</i>; <i>“Unicode”</i> and the Unicode Logo are registered trademarks of <i>Unicode, Inc.</i> This independent utility is not affiliated with, endorsed by, or sponsored by <i>Unicode, Inc.</i></div>
+<div class="copyright"></div></footer>
+<script>
+const glyphs = {
+  "A": ["⟑","Ꭿ","🄰","ᕔ","ꪇ","ឝ","ໞ","ꕔ","Ⲁ","ꛡ","𖬖","𐒷","₳","𖧫","𖨁","𖤬","⎁","ǟ","ᦧ","𖤂","𐐨","𐐀","𐋎","𖹬","𝚨","𐌀","𑃢","⎀","⎃","ᗩ","ᗋ","ᤂ","ꅔ","ձ","ꋬ","𐀁","𝜜","𝙰","𝔸","𝓐","𝗔","𝐀","Ѧ","ດ","ꗈ","ꗇ","ꕖ","Ⓐ"],
+  "B": ["𝄡","ᏸ","ਊ","ɓ̥","ᣡ","𐇝","Ხ","ᖲ","ᗷ","ᙟ","ੳ","ᛔ","Ⱐ","ꞗ","𝚩","𝙱","𝔹","𝕭","ℬ","𝗕","𝐁","β","ꕬ","🄱","Ᏸ","Ⓑ"],
+  "C": ["☪","𝄵","☾","𝓒","Ꮸ","ᕳ","₡","⸿","ꮳ","⍧","𔗏","𐃗","∁","Ꮳ","𐓆","𐒨","𐙠","𐘳","᥋","𐚓","𞄦","ᥫ","ʗ","င","℃","𐀲","₵","𝙲","ℂ","𝕮","𝗖","𝐂","ⵛ","ⵎ","🄲","ꕿ","ꗲ","ꗱ","ꕸ","Ꮳ","ꛕ","Ⓒ"],
+  "D": ["D","𞤯","ↁ","𝛛","ԃ","Ԃ","ᖱ","ᗟ","ᗠ","ᗥ","ᗬ","🆥","ᶑ","₫","𝙳","𝔻","𝕯","𝓓","𝗗","𝐃","ɗ̥","ð","🄳","Ⓓ"],
+  "E": ["ℇ","Ⱕ","؏","Ꮛ","∈","𐒢","℮","𖹏","𝛠","𖮀","𞄑","㉫","ᕮ","ᙓ","ᘿ","⍷","Ꜫ","ꫀ","𝙴","𝔼","𝕰","ℰ","𝗘","𝐄","ⵇ","ⵟ","ⵉ","ꗍ","દ્દ","Ⲉ","Ꮛ","🄴","Ⓔ"],
+  "F": ["🝡","𞅃","𝟋","𝟊","℉","𐝦","Ƒ","Ꝼ","𐅿","𑢢","𝙵","𝔽","𝕱","ℱ","𝗙","𝐅","ʄ̊","ꛂ","🄵","Ⓕ"],
+  "G": ["₲","G","Ǥ","Ᏽ","ꮹ","ڨ","Ჭ","Ɡ","ꁅ","ဌ","Ⴚ","ૹ","𝙶","𝔾","𝓖","𝗚","𝐆","ອ","Ꮐ","Ꮹ","🄶","Ⓖ"],
+  "H": ["ℏ","ⴼ","ꕑ","𖦙","𐪘","𐒅","₶","ɧ","ᦩ","𖭝","𖭜","Ⱗ","ƕ","Ƕ","೫","ᚻ","♄","អ","𑢥","𝙷","ℍ","𝕳","ℋ","𝗛","𝐇","ħ","ⴼ","ꛖ","ꛅ","ዙ","🄷","Ⓗ"],
+  "I": ["☤","⚕","⚚","𖣇","႞","ⅈ","⑄","🜌","𝙸","𝕀","𝕴","ℐ","𝗜","𝐈","ຳ","ꚤ","ꔁ","ꔀ","🄸","Ⓘ"],
+  "J": ["ʝ","𐫌","ᣱ","ჯ","ڸ","❡","𖥢","𖹅","𑆆","၂","𝙹","𝕁","𝕵","𝓙","𝗝","𝐉","ꚠ","🄹","Ⓙ"],
+  "K": ["㉿","ꗣ","ƙ","₭","𝙺","𝕂","𝕶","𝓚","𝗞","𝐊","🄺","Ⓚ"],
+  "L": ["𝙻","𝕃","𝕷","ℒ","𝗟","𝐋","ꛚ","ꚥ","Ꮣ","🄻","Ⓛ"],
+  "M": ["Ⱞ","𑇥","𖢑","𐎠","𖬷","𖥯","ᗰ","ᙏ","𐀢","ଳ","ന","ᛖ","ꢭ","𝙼","𝕄","𝕸","𝓜","𝗠","𝐌","Ⲙ","ꛔ","ꛏ","🄼","Ⓜ"],
+  "N": ["𝛞","᮷","ꤲ","𝝶","𐭇","𑫍","𝛮","𖬃","𐰇","𐰵","᱅","ᴻ","ꤾ","𞄂","₦","𝙽","ℕ","𝕹","𝓝","𝗡","𝐍","ຖ","ⵍ","ⵍ","ꖧ","ꖦ","ꚡ","ꛘ","🄽","Ⓝ"],
+  "O": ["ꬾ","ꮻ","ᴓ","᪤","ɸ","꩜","Ѻ","θ","𐌈","Ꙫ","Ꚛ","𝛗","⛞","⚆","⨀","Ⱉ","Ⱒ","႐","⌀","∅","⍉","⌾","⍬","𞋇𞋯","❍","𝙾","𝕆","𝕺","𝓞","𝗢","𝐎","ʘ","ⵀ","ꗞ","ꗝ","ꖴ","ꚢ","Ф","Ꭴ","ፀ ","🄾","Ⓞ"],
+  "P": ["℘","⅌","𖡮","ᖰ","ᕵ","🆊","Ƿ","ק","₱","𝙿","ℙ","𝕻","𝓟","𝗣","𝐏","Ꮅ","ꛤ","ꛠ","ꛄ","ꚬ","ⲣ","ⲣ","🄿","Ⓟ"],
+  "Q": ["ᖳ","ᕴ","ꝙ","Ꝗ","ꪋ","𝚀","ℚ","𝕼","𝓠","𝗤","𝐐","Ꮔ","🅀","Ⓠ"],
+  "R": ["𐙕","℞","🜆","☈","𐦝","ᚱ","ꮢ","ꮉ","Ʀ","Ꮢ","𐒴","ᖆ","ᖇ","₹","𐍂","ᗁ","ꋪ","𝚁","ℝ","𝕽","ℛ","𝗥","𝐑","ⴽ","Я","🅁","Ⓡ"],
+  "S": ["Ꭶ","ڱ","န","ܨ","ꭶ","ៜ","ᰧ","ꢻ","𖬺","𐔣","ᣵ","𖹋","ꍛ","𑂘","Ֆ","ន","ꂢ","𑣮","𝚂","𝕊","𝕾","𝓢","𝗦","𝐒","ⵢ","ຽ","ຣ","ຮ","ꕶ","ꕷ","ꗏ","ꗟ","ⲋ","ડ","🅂","Ⓢ"],
+  "T": ["☦","ʈ","𑇍","𖭪","𖣁","ⴕ","🜋","ᡶ","₸","♱","♰","𝚃","𝕋","𝕿","𝓣","𝗧","𝐓","ǂ","ⵜ","ⵐ","ꖅ","ꔉ","Ϯ","ፐ","🅃","Ⓣ"],
+  "U": ["ᥩ","᮵","℧","ᕰ","🅄","𑢹","𝚄","𝕌","𝖀","𝓤","𝗨","𝐔","ⵡ","ⵡ","ꚶ","ሀ","Ⓤ"],
+  "V": ["ꮙ","℣","✔","⛛","🜉","🝢","⨈","𝚅","𝕍","𝖁","𝓥","𝗩","𝐕","ɣ","🅅","Ⓥ"],
+  "W": ["ꮤ","ᗯ","⍦","🅆","ש","♆","𔓢","𔒾","ധ","ሠ","យ","⍹","Ⱎ","𐌸","𝚆","𝕎","𝖂","𝒲","𝗪","𝐖","ຟ","Ꮤ","Ш","Ⲱ","Ⓦ"],
+  "X": ["𖣘","𓌖","𖹓","✗","᰾","᰽","※","🅇","א","⚔","⏧","𔕂","𖠄","✘","𝚇","𝕏","𝖃","𝓧","𝗫","𝐗","χ","Ⓧ"],
+  "Y": ["𐒋","𐔤","Ყ","Ⴤ","🅈","𐂨","𝚈","𝕐","𝖄","𝒴","𝗬","𝐘","ⵖ","Ꮍ","ꚲ","ꚵ","Ⓨ"],
+  "Z": ["𐄺","𔗨","₴","Ꙃ","𐓓","႗","𖹃","Ⴭ","ᤁ","🅉","𑢳","𝚉","ℤ","𝖅","𝓩","𝗭","𝐙","Ⓩ"]
+};
+const ligatures = {"LE":["ᇉ"],"AS":["⅍"],"IA":["ⷼ","ꙗ","Ꙗ"],"OE":["ꟹ"],"CO":["ꥠ","㏇"],"OC":["ꥰ"],"EE":["ꥹ"],"CE":["ퟔ"],"DEF":["≝"],"OY":["ѹ"],"NN":["ꉆ"],"MR":["🅬"],"IE":["ꍠ"],"NO":["ꍸ","ꂚ","№"],"US":["␟"],"CAN":["␘"],"LOG":["㏒"],"IN":["㏌"],"MIL":["㏕"],"MOL":["㏖"],"PH":["㏗"],"RAD":["㎭"],"EV":["㋎"],"BAR":["㍴"],"ERG":["㋍"],"EA":["ణ"],"MM":["ဣ"],"IL":["𔖵"],"ONE":["ꆛ"],"IT":["𐜛","𔕺𔕛"],"BE":["Ⱘ"],"DA":["㍲"],"AU":["㍳","ꜷ"],"OV":["㍵","Ꭽ"],"MS":["㎳"],"NS":["㎱"],"PA":["㎩"],"NA":["㎁"],"AM":["㏂","𐅗"],"MA":["㎃"],"KA":["㎄"],"HO":["ꀞ"],"TH":["𑠓"],"THE":["𐅮"],"IC":["𔖶"],"DC":["𝄊"],"DS":["𝄉"],"PED":["𝆮"],"TR":["𝆖"],"TO":["ʨ"],"SO":["␎"],"HE":["𐅒"],"ER":["𐧳"],"SS":["🅍"],"ME":["𐅖"]};
+const keys = Object.keys(ligatures).sort((a,b)=>b.length-a.length);
+const output = document.getElementById('output'), input = document.getElementById('input');
+function codeBlock(cp){
+  if(cp>=0x1f000)return 'emoji'; if(cp>=0x1d400&&cp<=0x1d7ff)return 'math-alphanum';
+  if(cp>=0x1f100&&cp<=0x1f1ff)return 'enclosed-alphanum'; if(cp>=0x1d000&&cp<=0x1d3ff)return 'musical';
+  if(cp>=0x12000&&cp<=0x1247f)return 'cuneiform'; if(cp>=0x13000&&cp<=0x1342f)return 'egyptian';
+  if(cp>=0x1100&&cp<=0x11ff)return 'hangul-jamo'; if(cp>=0x1000&&cp<=0x109f)return 'myanmar';
+  if(cp>=0x2e80&&cp<=0x2fff)return 'cjk-radicals'; if(cp>=0x3040&&cp<=0x30ff)return 'kana';
+  if(cp>=0x0400&&cp<=0x052f)return 'cyrillic'; if(cp>=0x0370&&cp<=0x03ff)return 'greek';
+  if(cp>=0x0590&&cp<=0x08ff)return 'semitic'; if(cp>=0x0900&&cp<=0x0dff)return 'indic';
+  if(cp>=0xa000&&cp<=0xa4cf)return 'yi'; if(cp>=0x10a00&&cp<=0x10fff)return 'historic';
+  if(cp>=0x2000&&cp<=0x2bff)return 'symbols'; if(cp>=0xfe00)return 'presentation';
+  if(cp>=0x1e00&&cp<=0x1eff)return 'latin-extended'; return 'basic-latin';
+}
+function isSymbol(g){return !/[\p{L}\p{N}]/u.test(g)}
+function blockOf(g){const cp=g.codePointAt(0);return codeBlock(cp)}
+function pick(letter, recent){const list=glyphs[letter]||[letter]; const shuffled=[...list].sort(()=>Math.random()-.5); const allowed=shuffled.filter(g=>isSymbol(g)||recent.every(r=>isSymbol(r)||blockOf(r)!==blockOf(g))); return (allowed[0]||shuffled[0]||letter)}
+function scrambleText(text){let result='', recent=[]; for(let i=0;i<text.length;){let matched=null; for(const k of keys){const slice=text.slice(i,i+k.length); if(slice.toUpperCase()===k && (i===0||!/[A-Za-z]/.test(text[i-1])) && (i+k.length===text.length||!/[A-Za-z]/.test(text[i+k.length]))) {matched=k;break}}
+ if(matched){result+=ligatures[matched][Math.floor(Math.random()*ligatures[matched].length)]; i+=matched.length; recent=[]; continue}
+ const ch=text[i], upper=ch.toUpperCase(); if(glyphs[upper]&&/^[A-Z]$/.test(upper)){const g=pick(upper,recent); result+=g; recent.push(g); if(recent.length>2)recent.shift()}else{result+=ch; if(/\s/.test(ch))recent=[]} i++} return result}
+function render(){output.textContent=scrambleText(input.value)}
+
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+input.addEventListener('input', debounce(render, 150)); 
+document.getElementById('scramble').addEventListener('click',render); document.getElementById('clear').addEventListener('click',()=>{input.value='';output.textContent=''}); document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(output.textContent);document.getElementById('copy').textContent='COPIED';setTimeout(()=>document.getElementById('copy').textContent='COPY',1200)}catch(e){alert('Copy failed. Select the output and copy it manually.')}});
+</script></body></html>
