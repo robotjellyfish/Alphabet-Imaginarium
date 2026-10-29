@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,7 +44,7 @@ html[data-theme="dark"] .theme-toggle{background:#111218;color:#eaff00;border-co
 </head>
 <body>
 <div class="shell">
-<header><div class="rainbow"></div><section class="hero" aria-labelledby="page-title"><div class="kicker">ALPHABET</div><h1 id="page-title">IMAGINARIUM</h1><p class="tagline">DECORATE TEXT USING UNICODE</p><button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">◐</span><span class="theme-toggle-label">Dark mode</span></button></section></header>
+<header><div class="rainbow"></div><section class="hero" aria-labelledby="page-title"><div class="kicker">ALPHABET</div><h1 id="page-title">IMAGINARIUM</h1><p class="tagline">DECORATE TEXT USING UNICODE</p></section></header>
 <main>
 <section class="view active" id="scrambler" aria-labelledby="scrambler-title"><div class="intro"><div><div class="eyebrow">GLYPH SCRAMBLER</div><h2 id="scrambler-title"><span class="transform-lead">Transform text into a</span><br><span class="sample-title">🄳𝕚Ⓖ𔕺𔕛𝐚𝙻 🅁𝗮𝐍🅢𝕠𝙢 🄽Ⓞ𝘁Ꭼ</span></h2><p><strong class="how-title">As you type the engine replaces Latin alphabet letters with visually similar unicode characters sourced from a precompiled glossary.</p></div></div><div class="panel neon"><div class="input-shell"><button class="clear-x" id="clear" aria-label="Clear input" title="Clear input">✗ ᴄʟᴇᴀʀ</button><textarea id="input" aria-label="Text to scramble" aria-describedby="counter" placeholder="type something..."></textarea><div class="counter" id="counter">0 characters</div></div><div class="output" id="output" aria-label="Output" aria-live="polite"><span class="empty">Your transformed text will appear here.</span></div><div class="toolbar"><button class="btn primary" id="scramble">⛕ Rescramble</button><button class="btn pink" id="copy-output">© Copy</button></div><div class="tip">ⓘ Glyphs may render differently across devices, and some may be read unpredictably by assistive technology.</div></div><button class="btn primary glossary-link" data-view="deck">VIEW GLOSSARY</button></section>
 <section class="view" id="deck" aria-labelledby="deck-title"><div class="intro"><div><div class="eyebrow">VISUAL GLOSSARY</div><h2 id="deck-title">Glossary</h2><p>Explore the precompiled visual matches: <strong id="glyph-total"></strong> glyphs across the alphabet.</p></div></div><div class="letter-tabs" id="letter-tabs" role="tablist" aria-label="Choose a Latin letter"></div><div class="panel"><div class="deck-head"><div class="deck-letter" id="deck-letter">A</div></div><div class="glyph-grid" id="glyph-grid"></div></div><button class="btn primary glossary-link" data-view="scrambler">BACK TO GLYPH SCRAMBLER</button></section>
@@ -73,10 +73,6 @@ function closeGlyphDetails(){$('#glyph-modal').hidden=true;document.body.classLi
 function renderDeck(){const l=state.letter,items=DATA.letters[l];$('#deck-letter').textContent=l;$$('.letter-tab').forEach(b=>{const active=b.dataset.letter===l;b.classList.toggle('active',active);b.setAttribute('aria-selected',String(active))});$('#glyph-grid').innerHTML=items.map((x,i)=>`<button class="glyph-card" type="button" data-glyph-index="${i}" aria-label="${x.names.split(' + ')[0]}">${x.glyph}</button>`).join('');$$('[data-glyph-index]').forEach(b=>b.onclick=()=>showGlyphDetails(items[Number(b.dataset.glyphIndex)]))}
 
 $('#glyph-modal-close').onclick=closeGlyphDetails;$$('[data-close-glyph]').forEach(b=>b.onclick=closeGlyphDetails);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#glyph-modal').hidden)closeGlyphDetails()});
-const themeToggle=$('#theme-toggle');
-function applyTheme(theme){const dark=theme==='dark';document.documentElement.dataset.theme=dark?'dark':'light';themeToggle.setAttribute('aria-pressed',String(dark));themeToggle.setAttribute('aria-label',dark?'Switch to paper theme':'Switch to dark theme');themeToggle.querySelector('.theme-toggle-icon').textContent=dark?'☼':'◐';themeToggle.querySelector('.theme-toggle-label').textContent=dark?'Paper mode':'Dark mode'}
-let savedTheme='dark';try{savedTheme=localStorage.getItem('alphabet-imaginarium-theme')||'dark'}catch(e){}applyTheme(savedTheme);
-themeToggle.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';applyTheme(next);try{localStorage.setItem('alphabet-imaginarium-theme',next)}catch(e){}});
 renderDeck();updateCount();
 </script>
 </body></html>
